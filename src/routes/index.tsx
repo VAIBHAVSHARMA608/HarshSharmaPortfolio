@@ -126,7 +126,6 @@ const skillGroups = [
   {
     name: "Cloud & Systems",
     items: [
-      "AWS",
       "Cloud Computing",
       "Cloud Operations",
       "Cloud Support",
@@ -354,11 +353,6 @@ function Portfolio() {
                     ))}
                   </ul>
                   <div className="mt-6 flex gap-2">
-                    <Button asChild size="sm" variant="outline">
-                      <a href={GITHUB} target="_blank" rel="noreferrer">
-                        <Github className="h-4 w-4" /> Code
-                      </a>
-                    </Button>
                     <Button asChild size="sm" variant="ghost">
                       <a href={GITHUB} target="_blank" rel="noreferrer">
                         Details <ArrowUpRight className="h-4 w-4" />
