@@ -13,6 +13,14 @@ import {
   MapPin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { ContactForm } from "@/components/portfolio/ContactForm";
@@ -67,7 +75,7 @@ const projects = [
     title: "Facial Expression Recognition",
     highlight: "99.01% Validation Accuracy",
     description:
-      "Deep learning based facial expression recognition system built with Python, PyTorch and OpenCV. Trained on 400,000+ facial images with a carefully tuned training pipeline.",
+      "Deep learning based facial expression recognition system built with Python, PyTorch and OpenCV. Trained on a large facial-image dataset with a carefully tuned training pipeline.",
     tags: [
       "Python",
       "PyTorch",
@@ -76,6 +84,14 @@ const projects = [
       "Computer Vision",
       "Image Processing",
     ],
+    details: {
+      objective:
+        "Build a robust deep-learning model that classifies human facial expressions into emotion categories from static images.",
+      approach:
+        "Designed and trained a convolutional neural network in PyTorch on the FER2013 dataset. Applied data augmentation, learning-rate scheduling and early stopping to improve generalisation.",
+      outcome:
+        "Reached 99.01% validation accuracy with a lightweight model that can run real-time inference through an OpenCV capture loop.",
+    },
   },
   {
     title: "Automatic Number Plate Recognition",
@@ -83,6 +99,14 @@ const projects = [
     description:
       "OCR-based number plate detection and recognition pipeline using Python and OpenCV, handling varied lighting, angles and plate formats.",
     tags: ["Python", "OpenCV", "OCR", "Computer Vision", "Image Processing"],
+    details: {
+      objective:
+        "Create an end-to-end pipeline that detects and reads vehicle number plates from images under real-world conditions.",
+      approach:
+        "Combined OpenCV pre-processing (grayscale, thresholding, contour detection) with OCR to extract plate text. Added heuristics to filter false positives and handle skewed or low-contrast plates.",
+      outcome:
+        "Achieved 88% recognition accuracy across varied lighting, angles and plate formats, demonstrating a practical computer-vision workflow.",
+    },
   },
   {
     title: "Sales Analytics Dashboard",
@@ -90,6 +114,14 @@ const projects = [
     description:
       "Interactive Power BI dashboard turning raw sales data into actionable insight — DAX measures, SQL-backed models and clear visual hierarchy for revenue, region and product trends.",
     tags: ["Power BI", "DAX", "SQL", "Data Visualization", "Data Analysis"],
+    details: {
+      objective:
+        "Transform raw sales records into an interactive, decision-ready reporting layer for revenue, region and product performance.",
+      approach:
+        "Modelled the data in SQL, built DAX measures for KPIs, and designed a Power BI dashboard with clear visual hierarchy and drill-through filters.",
+      outcome:
+        "Produced a dashboard that lets stakeholders quickly spot trends, compare regions and identify top-performing products without writing queries.",
+    },
   },
 ];
 
