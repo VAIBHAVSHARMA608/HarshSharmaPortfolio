@@ -366,32 +366,69 @@ function Portfolio() {
             <SectionHeading eyebrow="Projects" title="Selected work" />
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((p, i) => (
-                <Reveal
-                  key={p.title}
-                  delay={i * 90}
-                  as="article"
-                  className="group flex flex-col rounded-2xl border border-border bg-card p-6 shadow-(--shadow-card) transition-all duration-300 hover:-translate-y-1 hover:shadow-(--shadow-lift)"
-                >
-                  <p className="eyebrow">{p.highlight}</p>
-                  <h3 className="mt-3 text-lg font-semibold tracking-tight">{p.title}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                    {p.description}
-                  </p>
-                  <ul className="mt-5 flex flex-wrap gap-2">
-                    {p.tags.map((t) => (
-                      <li key={t} className="pill">
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-6 flex gap-2">
-                    <Button asChild size="sm" variant="ghost">
-                      <a href={GITHUB} target="_blank" rel="noreferrer">
-                        Details <ArrowUpRight className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  </div>
-                </Reveal>
+                <Dialog key={p.title}>
+                  <Reveal
+                    delay={i * 90}
+                    as="article"
+                    className="group flex flex-col rounded-2xl border border-border bg-card p-6 shadow-(--shadow-card) transition-all duration-300 hover:-translate-y-1 hover:shadow-(--shadow-lift)"
+                  >
+                    <p className="eyebrow">{p.highlight}</p>
+                    <h3 className="mt-3 text-lg font-semibold tracking-tight">{p.title}</h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {p.description}
+                    </p>
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {p.tags.map((t) => (
+                        <li key={t} className="pill">
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 flex gap-2">
+                      <DialogTrigger asChild>
+                        <Button size="sm" variant="ghost">
+                          Details <ArrowUpRight className="h-4 w-4" />
+                        </Button>
+                      </DialogTrigger>
+                    </div>
+                  </Reveal>
+
+                  <DialogContent className="max-w-2xl">
+                    <DialogHeader>
+                      <p className="eyebrow">{p.highlight}</p>
+                      <DialogTitle className="mt-2 text-xl font-semibold tracking-tight">
+                        {p.title}
+                      </DialogTitle>
+                      <DialogDescription className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {p.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-4 space-y-5 text-sm leading-relaxed text-muted-foreground">
+                      <div>
+                        <h4 className="font-semibold text-foreground">Objective</h4>
+                        <p className="mt-1">{p.details.objective}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Approach</h4>
+                        <p className="mt-1">{p.details.approach}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Outcome</h4>
+                        <p className="mt-1">{p.details.outcome}</p>
+                      </div>
+                    </div>
+                    <div className="mt-6">
+                      <h4 className="text-sm font-semibold text-foreground">Technologies</h4>
+                      <ul className="mt-2 flex flex-wrap gap-2">
+                        {p.tags.map((t) => (
+                          <li key={t} className="pill">
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               ))}
             </div>
           </div>
