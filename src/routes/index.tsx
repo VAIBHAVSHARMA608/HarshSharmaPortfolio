@@ -21,6 +21,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import resume1 from "@/assets/resume-1.pdf.asset.json";
+import resume2 from "@/assets/resume-2.pdf.asset.json";
 import { Reveal } from "@/components/portfolio/Reveal";
 import { SiteNav } from "@/components/portfolio/SiteNav";
 import { ContactForm } from "@/components/portfolio/ContactForm";
