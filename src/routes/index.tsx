@@ -75,8 +75,8 @@ export const Route = createFileRoute("/")({
 });
 
 const EMAIL = "harshsharma.work01@gmail.com";
-const LINKEDIN = "https://www.linkedin.com/in/harsh-sharma";
-const GITHUB = "https://github.com/harshsharma";
+const LINKEDIN = "https://www.linkedin.com/in/harshsharma127/";
+const GITHUB = "https://github.com/";
 
 const projects = [
   {
