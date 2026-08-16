@@ -241,12 +241,26 @@ function Portfolio() {
               <Button asChild size="lg">
                 <a href="#projects">View Projects</a>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href="/harsh-sharma-resume.pdf" download>
-                  <Download className="h-4 w-4" />
-                  Download Resume
-                </a>
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button size="lg" variant="outline">
+                    <Download className="h-4 w-4" />
+                    Download Resume
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-56">
+                  <DropdownMenuItem asChild>
+                    <a href={resume1.url} download="Harsh_Sharma_Resume.pdf">
+                      Resume — Version 1
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href={resume2.url} download="Harsh_Sharma_Resume_2.pdf">
+                      Resume — Version 2
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button asChild size="lg" variant="ghost">
                 <a href="#contact">Contact Me</a>
               </Button>
